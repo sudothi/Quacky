@@ -16,11 +16,15 @@
 
 </div>
 
+<br />
+
 <div align="center">
-  <img src="https://imgur.com/a/i6AhyyY" alt="Main Dashboard" width="800" style="border-radius: 15px; box-shadow: 0 0 20px rgba(255, 59, 59, 0.3);">
-  <br><br>
+  <a href="https://www.figma.com/deck/Vnwd51szGdulh0wZrW8NIF/Sem-t%C3%ADtulo?node-id=1-45&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1">
+    <img src="https://i.imgur.com/i6AhyyY.png" alt="Ver Apresentação no Figma" width="100%">
+  </a>
 </div>
 
+<br />
 
 ---
 
@@ -34,20 +38,20 @@
 * **Instant Dodge**
 * **Lobby Reveal**
 
-### 🎨 Profile Customization
+###  Profile Customization
 * **Background Changer**
 * **Icon Changer**
 * **Riot ID Changer**
 * **Badge Manager**
 
-### 🛠️ Utility Tools
+###  Utility Tools
 * **Chat Offline Mode**
 * **UX Restart**
 * **Friend List Cleaner**
 
 ---
 
-## 📥 Installation
+##  Installation
 
 ### Prerequisites
 * **Python 3.10** or higher.
@@ -91,7 +95,7 @@ To create a standalone executable file (no Python required):
 
 ---
 
-## ⚠️ Disclaimer
+##  Disclaimer
 
 > **Educational Purpose Only:** This software is created for educational purposes to explore the LCU API. The developer is not responsible for any bans or penalties applied to your account. Use at your own risk.
 >
