@@ -5,8 +5,8 @@
   # Quacky! - LoL Assistant
 
   ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
-  ![Flet](https://img.shields.io/badge/Flet-UI-purple?style=for-the-badge)
-  ![Status](https://img.shields.io/badge/Status-Undetected-success?style=for-the-badge)
+   ![Flet](https://img.shields.io/badge/Flet-UI-purple?style=for-the-badge)
+   ![Status](https://img.shields.io/badge/Status-Undetected-success?style=for-the-badge)
   ![Platform](https://img.shields.io/badge/Platform-Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 
 </div>
@@ -106,4 +106,5 @@ To create a standalone executable file (no Python required):
 <div align="center">
   Made with <b>Flet</b>
 </div>
+
 
