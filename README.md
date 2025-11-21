@@ -83,7 +83,7 @@ To create a standalone executable file (no Python required):
 
 2.  Run the build command:
     ```bash
-    pyinstaller --noconfirm --onefile --windowed --icon="assets/icon.ico" --add-data "assets;assets" --name="Quack Assistant" main.py
+    pyinstaller --noconfirm --onefile --windowed --icon="assets/icon.ico" --add-data "assets;assets" --name="Quacky!" main.py
     ```
 
 3.  Find your app in the `dist/` folder.
@@ -101,6 +101,7 @@ To create a standalone executable file (no Python required):
 <div align="center">
   Made with <b>Flet</b>
 </div>
+
 
 
 
