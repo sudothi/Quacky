@@ -56,7 +56,7 @@
 
 1.  **Clone the repository**
     ```bash
-    git clone [https://github.com/sudothi/Quacky](https://github.com/sudothi/Quacky)
+    git clone https://github.com/sudothi/Quacky
     cd Quacky
     ```
 
@@ -101,6 +101,7 @@ To create a standalone executable file (no Python required):
 <div align="center">
   Made with <b>Flet</b>
 </div>
+
 
 
 
