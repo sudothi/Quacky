@@ -1,0 +1,6 @@
+flet
+requests
+psutil
+urllib3
+pyperclip
+Pillow
