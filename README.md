@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="assets/icon.png" alt="Quack Assistant Logo" width="120" />
+  <img src="assets/icon.ico" alt="Quack Assistant Logo" width="120" />
 
   # Quacky! - LoL Assistant
 
@@ -106,4 +106,5 @@ To create a standalone executable file (no Python required):
 <div align="center">
   Made with <b>Flet</b>
 </div>
+
 
