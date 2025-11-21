@@ -20,7 +20,7 @@
 
 <div align="center">
   <a href="https://www.figma.com/deck/Vnwd51szGdulh0wZrW8NIF/Sem-t%C3%ADtulo?node-id=1-45&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1">
-    <img src="https://i.imgur.com/i6AhyyY.png" alt="Ver Apresentação no Figma" width="100%">
+    <img src="https://i.imgur.com/T0VsdPW.png" alt="Ver Apresentação no Figma" width="100%">
   </a>
 </div>
 
@@ -106,3 +106,4 @@ To create a standalone executable file (no Python required):
 <div align="center">
   Made with <b>Flet</b>
 </div>
+
