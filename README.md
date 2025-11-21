@@ -56,8 +56,8 @@
 
 1.  **Clone the repository**
     ```bash
-    git clone [https://github.com/YOUR_USERNAME/Quack-Assistant.git](https://github.com/YOUR_USERNAME/Quack-Assistant.git)
-    cd Quack-Assistant
+    git clone [https://github.com/sudothi/Quacky](https://github.com/sudothi/Quacky)
+    cd Quacky
     ```
 
 2.  **Install dependencies**
@@ -101,6 +101,7 @@ To create a standalone executable file (no Python required):
 <div align="center">
   Made with <b>Flet</b>
 </div>
+
 
 
 
