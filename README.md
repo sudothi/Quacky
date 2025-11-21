@@ -9,11 +9,6 @@
   ![Status](https://img.shields.io/badge/Status-Undetected-success?style=for-the-badge)
   ![Platform](https://img.shields.io/badge/Platform-Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 
-  <a href="#-features">Features</a> •
-  <a href="#-installation">Installation</a> •
-  <a href="#-building-exe">Building</a> •
-  <a href="#-disclaimer">Disclaimer</a>
-
 </div>
 
 <br />
@@ -106,5 +101,6 @@ To create a standalone executable file (no Python required):
 <div align="center">
   Made with <b>Flet</b>
 </div>
+
 
 
