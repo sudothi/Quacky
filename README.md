@@ -1,7 +1,5 @@
 <div align="center">
 
-  <img src="assets/icon.ico" alt="Quack Assistant Logo" width="120" />
-
   # Quacky! - LoL Assistant
 
   ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white) 
@@ -106,5 +104,6 @@ To create a standalone executable file (no Python required):
 <div align="center">
   Made with <b>Flet</b>
 </div>
+
 
 
