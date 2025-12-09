@@ -14,7 +14,15 @@
     <img src="https://img.shields.io/badge/Visitar_o_Site-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Visitar o Site" />
   </a>
 </div>
+<br />
 
+<div align="center">
+  <a href="https://quacky-brown.vercel.app/">
+    <img src="https://i.imgur.com/T0VsdPW.png" alt="Ver Apresentação no Figma" width="100%">
+  </a>
+</div>
+
+<br />
 
 ---
 
