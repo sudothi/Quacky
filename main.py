@@ -14,7 +14,6 @@ def resource_path(relative_path):
     except: base_path = os.path.abspath(".")
     return os.path.join(base_path, relative_path)
 
-# --- ESTILO ---
 BG_COLOR = "#0f0f11"
 GLASS_COLOR = "#0DFFFFFF"
 GLASS_BORDER = "#1AFFFFFF"
@@ -23,11 +22,9 @@ TEXT_MUTED = "#a1a1a6"
 DIVIDER_COLOR = "#1AFFFFFF"
 ITEMS_PER_PAGE = 48 
 
-# --- VARIÁVEIS GLOBAIS ---
 all_champions_list = []
 
 def main(page: ft.Page):
-    # --- CONFIGURAÇÃO DE JANELA ---
     page.title = "Quacky!"
     page.bgcolor = ft.Colors.TRANSPARENT
     page.padding = 0
@@ -47,19 +44,16 @@ def main(page: ft.Page):
     page.theme_mode = ft.ThemeMode.DARK
     api = LeagueConnector()
 
-    # --- Refs ---
     main_content_area = ft.Ref[ft.Container]()
     txt_log = ft.Ref[ft.Column]()
     icon_auto_accept = ft.Ref[ft.IconButton]()
     icon_autojoin = ft.Ref[ft.IconButton]() 
     
-    # Dados
     txt_status = ft.Text("Waiting Client...", color=TEXT_MUTED, size=12)
     txt_summoner = ft.Text("Loading...", size=24, weight="bold")
     txt_rank = ft.Text("...", color=NEON_RED, size=14)
     avatar_img = ft.Image(src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/29.jpg", width=80, height=80, border_radius=40, opacity=0.5)
 
-    # --- COMPONENTES ---
     def GlassContainer(content, width=None, height=None, padding=20, expand=False):
         return ft.Container(
             content=content, width=width, height=height, padding=padding,
@@ -80,7 +74,6 @@ def main(page: ft.Page):
     def ShowSnack(msg, color="green"):
         page.open(ft.SnackBar(ft.Text(msg), bgcolor=color))
 
-    # --- BARRA DE TÍTULO (PATO RESTAURADO) ---
     def build_custom_titlebar():
         def minimize(e): page.window.minimized = True; page.update()
         def maximize(e): 
@@ -107,7 +100,6 @@ def main(page: ft.Page):
             bgcolor="#1AFFFFFF", height=40
         )
 
-    # --- PAGINAÇÃO ---
     class PaginationController:
         def __init__(self, all_items, grid_ref, page_txt_ref, prev_btn, next_btn, create_tile_func):
             self.all_items = all_items; self.filtered_items = all_items; self.grid_ref = grid_ref; self.page_txt_ref = page_txt_ref; self.prev_btn = prev_btn; self.next_btn = next_btn; self.create_tile_func = create_tile_func; self.current_page = 1; self.total_pages = 1; self.update_batch_memory()
@@ -140,7 +132,6 @@ def main(page: ft.Page):
             self.filtered_items = self.all_items if not q else [i for i in self.all_items if q in str(i.get('id','')).lower() or q in str(i.get('name','')).lower() or q in str(i.get('title','')).lower()]
             self.current_page = 1; self.update_batch_memory(); self.render_ui()
 
-    # --- AUTOCOMPLETE ---
     def create_autocomplete_field(label, on_select_callback, initial_enabled=True):
         selected_id = [None]; txt_ref = ft.Ref[ft.TextField](); suggestions_ref = ft.Ref[ft.Column](); switch_ref = ft.Ref[ft.Switch]()
         def on_change(e):
@@ -156,7 +147,6 @@ def main(page: ft.Page):
             suggestions_ref.current.controls = s; suggestions_ref.current.update()
         return ft.Column([ft.Row([ft.Text(label, color=TEXT_MUTED, size=12), ft.Container(expand=True), ft.Switch(ref=switch_ref, value=initial_enabled, active_color=NEON_RED, scale=0.7) if not label.startswith("Primário") else ft.Container()], alignment=ft.MainAxisAlignment.SPACE_BETWEEN), ft.TextField(ref=txt_ref, hint_text="Search...", height=35, text_size=12, content_padding=10, border_color=DIVIDER_COLOR, on_change=on_change), ft.Column(ref=suggestions_ref, spacing=2)], spacing=5), txt_ref, switch_ref, selected_id
 
-    # --- VIEWS ---
     def build_dashboard_view():
         profile_card = GlassContainer(height=220, content=ft.Row([avatar_img, ft.Container(width=20), ft.Column([txt_status, txt_summoner, txt_rank], alignment=ft.MainAxisAlignment.CENTER, spacing=5)], alignment=ft.MainAxisAlignment.START))
         logs_area = GlassContainer(expand=True, content=ft.Column([ft.Text("ACTIVITY LOG", size=12, weight="bold", color=TEXT_MUTED), ft.Divider(color=DIVIDER_COLOR), ft.Column(ref=txt_log, spacing=10)]))
@@ -306,12 +296,10 @@ def main(page: ft.Page):
                 avatar_img.src = f"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/{data.get('profileIconId', 29)}.jpg"; avatar_img.opacity = 1
                 page.update()
 
-    # --- LAYOUT ---
     blob_red = ft.Container(width=400, height=400, bgcolor=NEON_RED, border_radius=200, left=-100, top=-50, opacity=0.3, shadow=ft.BoxShadow(blur_radius=150, color=NEON_RED, spread_radius=20))
     blob_gray = ft.Container(width=300, height=300, bgcolor="blueGrey900", border_radius=150, bottom=-50, right=-50, opacity=0.3, shadow=ft.BoxShadow(blur_radius=120, color="blueGrey900", spread_radius=10))
 
     sidebar = GlassContainer(width=90, content=ft.Column([
-            # ICONE REMOVIDO DAQUI
             ft.Container(height=30),
             ft.IconButton(ft.Icons.DASHBOARD, icon_color="white", tooltip="Dashboard", on_click=go_to_dashboard), ft.Divider(color=DIVIDER_COLOR, height=20),
             ft.IconButton(ref=icon_auto_accept, icon=ft.Icons.CHECK_CIRCLE_OUTLINE, selected_icon=ft.Icons.CHECK_CIRCLE, style=ft.ButtonStyle(color={"": TEXT_MUTED, "selected": NEON_RED}), tooltip="Auto Accept", on_click=toggle_auto_accept),
