@@ -18,7 +18,6 @@ class LeagueConnector:
         self.connected = False
         self.base_url = ""
         
-        # States
         self.auto_accept_active = False
         self.autojoin_active = False
         self.instalock_active = False
@@ -73,7 +72,6 @@ class LeagueConnector:
             self.connected = False
             return None
 
-    # --- DATA FETCHING ---
     def get_summoner_data(self):
         res = self.request('GET', '/lol-summoner/v1/current-summoner')
         return res.json() if res and res.status_code == 200 else None
@@ -93,7 +91,6 @@ class LeagueConnector:
             res = requests.get(url)
             if res.status_code != 200: return [], f"Web Error: HTTP {res.status_code}"
             data = res.json()
-            # Filter out bad IDs (bots/tutorial)
             champs = [c for c in data if c['id'] != -1 and c['id'] < 2000]
             champs.sort(key=lambda x: x['name'])
             self.champions_cache = champs
@@ -122,7 +119,6 @@ class LeagueConnector:
             return []
         except: return []
 
-    # --- GAME LOGIC ---
     def auto_accept_logic(self):
         check = self.request('GET', '/lol-lobby/v2/lobby/matchmaking/search-state')
         if check and check.status_code == 200:
@@ -163,7 +159,6 @@ class LeagueConnector:
                              self.request('PATCH', f"/lol-champ-select/v1/session/actions/{action['id']}", 
                                          {"championId": self.autoban_target, "completed": True})
 
-    # --- TOOLS ---
     def change_icon(self, icon_id):
         res = self.request("PUT", "/lol-summoner/v1/current-summoner/icon", data={"profileIconId": int(icon_id)})
         return res.status_code == 201 or res.status_code == 200
@@ -235,7 +230,6 @@ class LeagueConnector:
             time.sleep(0.05)
         return count, None
 
-    # --- CONFIGS ---
     def set_auto_accept(self, active: bool): self.auto_accept_active = active
     def set_autojoin(self, active: bool): self.autojoin_active = active
     def update_instalock_preferences(self, enabled, targets):
@@ -245,7 +239,6 @@ class LeagueConnector:
         self.autoban_active = enabled
         self.autoban_target = target_id
 
-    # --- LOOPS ---
     def _background_loop(self):
         while not self._stop_event.is_set():
             if self.connected:
